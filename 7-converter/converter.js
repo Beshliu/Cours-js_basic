@@ -1,23 +1,26 @@
-function conversion(rate) {
 
-   const from_RUB_In_USD = 1 / 80;      
-   const from_RUB_In_Euro = 1 / 90;
-   const from_RUB_In_JPY = 0;
-   const from_USD_In_RUB = 1 * 80;
-   const from_USD_In_Euro = 1 / 1.16;
-   const from_USD_In_JPY = 0;
-   const from_Euro_In_RUB = 1 / 80;
-   const from_Euro_In_USD = 1 * 1.16;
-   const from_Euro_In_JPY = 0;
-   const from_JPY_In_RUB = 0;
-   const from_JPY_In_USD = 0;
-   const from_JPY_In_Euro = 0;
 
-   
-const exchenge = rate * from_RUB_In_USD;
 
-    console.log(`From ${rate}`);
-    return exchenge || null;
+function conversion (from, to, sum) {
+    let res 
+    if (from === 'RUB' && to === 'USD') {
+        res = sum / 70;
+    } else if (from === 'RUB' && to === 'Euro') {
+        res = sum / 80;
+    } else if (from === 'USD' && to === 'Euro') {
+        res = sum / 0.1;
+    } else if (from === 'USD' && to === 'RUB') {
+        res = sum * 70;
+    } else if (from === 'Euro' && to === 'RUB') {
+        res = sum * 80;
+    } else if (from === 'Euro' && to === 'USD') {
+        res = sum * 0.1;
+    } else {
+        res = null
+    }
+
+    console.log (`${sum} ${from} = ${res} ${to}`);
 }
+conversion ('RUB', 'USD', 1000);
 
-console.log(`To ${conversion(1000)}`);
+
