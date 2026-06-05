@@ -13,8 +13,6 @@ function formatDates(arr) {
       return `${parts[1]}-${parts[0]}-${parts[2]}`;
     }
 });
-
-   
 }
 
  const validDates = formatDates(dates);
